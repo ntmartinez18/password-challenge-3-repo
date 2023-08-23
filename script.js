@@ -28,12 +28,10 @@ var randomNumber = Math.floor(Math.random() * number.length);
 var randomSymbol= Math.floor(Math.random() * symbol.length);
 
 prompt1 = confirm("Select your password criteria?");
-// const input1 = prompt1;
 console.log(prompt1);
 
 /*account for other responses */
 prompt2 = prompt("How many characters would you like your password to be? (Enter number between 8-128)");
-// const input2 = prompt2;
   if (prompt2 < 8) {
     alert("Must be > or equal to 8");
     generatePassword();
@@ -48,32 +46,64 @@ prompt3 = confirm("Include character types?");
 // const input3 = prompt3;
 console.log(prompt3)
 
-prompt4 = confirm("Include uppercase characters?");
-// const input4 = prompt4;
-  if (prompt4 == true) {
-    options = options.concat(upperCase)
-  }
+isUppercase = confirm("Include uppercase characters?");
+
+isLowercase = confirm("Include lowercase characters?");
+
+isNumber = confirm("Include numbers? (yes/no)");
+
+isSymbol = confirm("Include special characters? (yes/no)");
+
+
+if (isUppercase == true) {
+  options = options.concat(upperCase)
+}
 console.log(options);
 
-prompt5 = confirm("Include lowercase characters?");
-if (prompt5 == true) {
+if (isLowercase == true) {
   options = options.concat(lowerCase)
 }
 console.log(options);
 
-prompt6 = confirm("Include numbers? (yes/no)");
-// const input6 = prompt6;
-if (prompt6 == true) {
+if (isNumber == true) {
   options = options.concat(number)
 }
 console.log(options);
 
-prompt7 = confirm("Include special characters? (yes/no)");
-// const input7 = prompt7;
-if (prompt7 == true) {
+if (isSymbol == true) {
   options = options.concat(symbol)
 }
 console.log(options);
+
+
+
+
+
+// prompt4 = confirm("Include uppercase characters?");
+//   if (prompt4 == true) {
+//     options = options.concat(upperCase)
+//   }
+// console.log(options);
+
+// prompt5 = confirm("Include lowercase characters?");
+// if (prompt5 == true) {
+//   options = options.concat(lowerCase)
+// }
+// console.log(options);
+
+// prompt6 = confirm("Include numbers? (yes/no)");
+// // const input6 = prompt6;
+// if (prompt6 == true) {
+//   options = options.concat(number)
+// }
+// console.log(options);
+
+// prompt7 = confirm("Include special characters? (yes/no)");
+// // const input7 = prompt7;
+// if (prompt7 == true) {
+//   options = options.concat(symbol)
+// }
+// console.log(options);
 
 for (let i = 0; i <= prompt2; i++) {
   var randomUpper = Math.floor(Math.random() * upperCase.length);
