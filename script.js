@@ -56,62 +56,90 @@ isSymbol = confirm("Include special characters? (yes/no)");
 
 
 if (isUppercase == true) {
-  options = options.concat(upperCase)
-}
-console.log(options);
+  options = options.concat(upperCase);
+} else if (isUppercase == false) {
+  console.log(options);
+};
 
 if (isLowercase == true) {
   options = options.concat(lowerCase)
-}
-console.log(options);
+} else if (isLowercase == false) {
+  console.log(options);
+};
 
 if (isNumber == true) {
   options = options.concat(number)
-}
+} else if (isNumber == false) {
 console.log(options);
+};
 
 if (isSymbol == true) {
   options = options.concat(symbol)
-}
+} else if (isSymbol == false) {
 console.log(options);
+};
 
 
+/* try the if statements as situations */
+// if (isUppercase == true && isLowercase == true) {
+//   options = options.concat(upperCase, lowerCase)
+// };
 
+// if (isUppercase == true && isLowercase == true && isNumber == true) {
+//   options = options.concat(upperCase, lowerCase, number)
+// };
 
+// if (isUppercase == true && isLowercase == true && isNumber == true && isSymbol == true) [
+//   options = options.concat(upperCase, lowerCase, number, symbol)
+// ];
 
-// prompt4 = confirm("Include uppercase characters?");
-//   if (prompt4 == true) {
-//     options = options.concat(upperCase)
-//   }
-// console.log(options);
+// if (isUppercase == false && isLowercase == true && isNumber == true && isSymbol == true) [
+//   options = options.concat(lowerCase, number, symbol)
+// ];
 
-// prompt5 = confirm("Include lowercase characters?");
-// if (prompt5 == true) {
-//   options = options.concat(lowerCase)
-// }
-// console.log(options);
+// if (isUppercase == true && isLowercase == false && isNumber == true && isSymbol == true) [
+//   options = options.concat(upperCase, number, symbol)
+// ];
 
-// prompt6 = confirm("Include numbers? (yes/no)");
-// // const input6 = prompt6;
-// if (prompt6 == true) {
-//   options = options.concat(number)
-// }
-// console.log(options);
+// if (isUppercase == true && isLowercase == true && isNumber == false && isSymbol == true) [
+//   options = options.concat(upperCase, lowerCase, symbol)
+// ];
 
-// prompt7 = confirm("Include special characters? (yes/no)");
-// // const input7 = prompt7;
-// if (prompt7 == true) {
-//   options = options.concat(symbol)
-// }
-// console.log(options);
+// if (isUppercase == true && isLowercase == false && isNumber == false && isSymbol == true) [
+//   options = options.concat(upperCase, symbol)
+// ];
+
+// if (isUppercase == true && isLowercase == true && isNumber == true && isSymbol == true) [
+//   options = options.concat(upperCase, lowerCase, number, symbol)
+// ];
+
 
 for (let i = 0; i <= prompt2; i++) {
   var randomUpper = Math.floor(Math.random() * upperCase.length);
   password = password + upperCase.charAt(randomUpper);
-  // password = options.concat(upperCase, lowerCase, number, symbol);
+  var randomLower = Math.floor(Math.random() * lowerCase.length);
+  password = password + lowerCase.charAt(randomLower);
+  var randomNumber = Math.floor(Math.random() * number.length);
+  password = password + number.charAt(randomNumber);
+  var randomSymbol = Math.floor(Math.random() * symbol.length);
+  password = password + symbol.charAt(randomSymbol);
 }
 console.log(password);
 return password;
+
+// for (let i = 0; i <= prompt2; i++) {
+//   var randomLower = Math.floor(Math.random() * lowerCase.length);
+//   password = password + lowerCase.charAt(randomLower);
+// }
+// console.log(password);
+// return password;
+
+
+
+
+
+
+
 };
 
 
