@@ -109,6 +109,7 @@ console.log(options);
  ];
 
 
+ /*created for loop to generate password */
 for (let i = 0; i <= length; i++) {
   var randomUpper = Math.floor(Math.random() * upperCase.length);
   password = password + upperCase.charAt(randomUpper);
@@ -121,10 +122,7 @@ for (let i = 0; i <= length; i++) {
 }
 console.log(password);
 return password;
-
 };
-
-
 
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
