@@ -17,11 +17,9 @@ function writePassword() {
 }
 
 // created prompt sequence to receive password criteria from user
-
 function generatePassword() { 
 var options = "";
 var password = "";
-
 
 var randomLower = Math.floor(Math.random() * lowerCase.length);
 var randomNumber = Math.floor(Math.random() * number.length);
@@ -30,20 +28,19 @@ var randomSymbol= Math.floor(Math.random() * symbol.length);
 prompt1 = confirm("Select your password criteria?");
 console.log(prompt1);
 
-/*account for other responses */
-prompt2 = prompt("How many characters would you like your password to be? (Enter number between 8-128)");
-  if (prompt2 < 8) {
+/* created if statements and confirms for password criteria */
+length = prompt("How many characters would you like your password to be? (Enter number between 8-128)");
+  if (length < 8) {
     alert("Must be > or equal to 8");
     generatePassword();
-  } else if (prompt2 > 128) {
+  } else if (length > 128) {
     alert("Must be less than 128");
     generatePassword();
   } else {
-    console.log(prompt2);
+    console.log(length);
   };
 
 prompt3 = confirm("Include character types?");
-// const input3 = prompt3;
 console.log(prompt3)
 
 isUppercase = confirm("Include uppercase characters?");
@@ -79,42 +76,40 @@ if (isSymbol == true) {
 console.log(options);
 };
 
+ if (isUppercase == true && isLowercase == true) {
+   options = options.concat(upperCase, lowerCase)
+ };
 
-/* try the if statements as situations */
-// if (isUppercase == true && isLowercase == true) {
-//   options = options.concat(upperCase, lowerCase)
-// };
+ if (isUppercase == true && isLowercase == true && isNumber == true) {
+   options = options.concat(upperCase, lowerCase, number)
+ };
 
-// if (isUppercase == true && isLowercase == true && isNumber == true) {
-//   options = options.concat(upperCase, lowerCase, number)
-// };
+ if (isUppercase == true && isLowercase == true && isNumber == true && isSymbol == true) [
+   options = options.concat(upperCase, lowerCase, number, symbol)
+ ];
 
-// if (isUppercase == true && isLowercase == true && isNumber == true && isSymbol == true) [
-//   options = options.concat(upperCase, lowerCase, number, symbol)
-// ];
+ if (isUppercase == false && isLowercase == true && isNumber == true && isSymbol == true) [
+   options = options.concat(lowerCase, number, symbol)
+ ];
 
-// if (isUppercase == false && isLowercase == true && isNumber == true && isSymbol == true) [
-//   options = options.concat(lowerCase, number, symbol)
-// ];
+ if (isUppercase == true && isLowercase == false && isNumber == true && isSymbol == true) [
+   options = options.concat(upperCase, number, symbol)
+ ];
 
-// if (isUppercase == true && isLowercase == false && isNumber == true && isSymbol == true) [
-//   options = options.concat(upperCase, number, symbol)
-// ];
+ if (isUppercase == true && isLowercase == true && isNumber == false && isSymbol == true) [
+   options = options.concat(upperCase, lowerCase, symbol)
+ ];
 
-// if (isUppercase == true && isLowercase == true && isNumber == false && isSymbol == true) [
-//   options = options.concat(upperCase, lowerCase, symbol)
-// ];
+ if (isUppercase == true && isLowercase == false && isNumber == false && isSymbol == true) [
+   options = options.concat(upperCase, symbol)
+ ];
 
-// if (isUppercase == true && isLowercase == false && isNumber == false && isSymbol == true) [
-//   options = options.concat(upperCase, symbol)
-// ];
-
-// if (isUppercase == true && isLowercase == true && isNumber == true && isSymbol == true) [
-//   options = options.concat(upperCase, lowerCase, number, symbol)
-// ];
+ if (isUppercase == false && isLowercase == true && isNumber == true && isSymbol == false) [
+   options = options.concat(upperCase, lowerCase, number, symbol)
+ ];
 
 
-for (let i = 0; i <= prompt2; i++) {
+for (let i = 0; i <= length; i++) {
   var randomUpper = Math.floor(Math.random() * upperCase.length);
   password = password + upperCase.charAt(randomUpper);
   var randomLower = Math.floor(Math.random() * lowerCase.length);
@@ -126,19 +121,6 @@ for (let i = 0; i <= prompt2; i++) {
 }
 console.log(password);
 return password;
-
-// for (let i = 0; i <= prompt2; i++) {
-//   var randomLower = Math.floor(Math.random() * lowerCase.length);
-//   password = password + lowerCase.charAt(randomLower);
-// }
-// console.log(password);
-// return password;
-
-
-
-
-
-
 
 };
 
